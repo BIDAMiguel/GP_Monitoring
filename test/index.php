@@ -400,15 +400,15 @@
                         <div class="form-row">
                           <div class="form-group col-md-3">
                               <label for="srplate" class="text-muted" style="font-size:13px;font-weight:bold;">SRPlate</label>
-                              <input type="number" id="srplate" class="form-control" style="font-size:13px;">
+                              <input type="number" id="srplate" class="form-control" style="font-size:13px;" step="0.001">
                           </div>
                           <div class="form-group col-md-3">
                               <label for="srpaste" class="text-muted" style="font-size:13px;font-weight:bold;">SRPaste</label>
-                              <input type="number" id="srpaste" class="form-control" style="font-size:13px;">
+                              <input type="number" id="srpaste" class="form-control" style="font-size:13px;" step="0.001">
                           </div>
                           <div class="form-group col-md-3">
                               <label for="trimmings" class="text-muted" style="font-size:13px;font-weight:bold;">Trimmings</label>
-                              <input type="number" id="trimmings" class="form-control" style="font-size:13px;">
+                              <input type="number" id="trimmings" class="form-control" style="font-size:13px;" step="0.001">
                           </div>
                           <div class="form-group col-md-3">
                             <div class="container text-center position-relative" style="top:30px;">

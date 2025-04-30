@@ -1422,8 +1422,15 @@
                     $id = $row['ScrapDetailID'];
                 }   
                 
-                $update = "UPDATE scrapdetail_tbl ";
-                $update .="SET SRPlate = (SELECT SRPLate FROM scrapdetail_tbl WHERE ScrapDetailID = '".$id."') + '".$SRPlate."', DateModified = getdate(), TotalOutput = '".$outputtotal."'  WHERE ScrapDetailID = '".$id."' ";
+                $update = "
+                    UPDATE scrapdetail_tbl 
+                    SET SRPlate = 
+                        TRY_CAST((SELECT SRPlate FROM scrapdetail_tbl WHERE ScrapDetailID = '$id') AS FLOAT) 
+                        + TRY_CAST('$SRPlate' AS FLOAT),
+                        DateModified = GETDATE(),
+                        TotalOutput = '$outputtotal'
+                    WHERE ScrapDetailID = '$id'
+                ";
                 $update = odbc_exec($conn, $update);
 
                 if($update){

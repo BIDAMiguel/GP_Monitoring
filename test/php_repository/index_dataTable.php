@@ -220,7 +220,8 @@
                 while($rowplate = odbc_fetch_array($srplateresult)){
                     $srplate = $rowplate['SRPLAte'];
                 }
-
+                
+                $srplate = number_format((float) $row['SRPlate'], 3, '.', '');
                 $pcs = "";
                 if($item_qty > 1){
                     $pcs = "pcs";
